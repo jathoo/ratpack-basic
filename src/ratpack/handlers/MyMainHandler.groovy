@@ -55,7 +55,7 @@ class MyMainHandler  extends GroovyChainAction {
                 }
             }*/
             all  new RegistrationHandler()
-            path "registration/:eventId", new RegistrationHandler()
+            path "registration", new RegistrationHandler()
            // post "registration", new RenderFromHandler()
         }
 
