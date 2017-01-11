@@ -9,16 +9,12 @@ class RegistrationHandler implements Handler {
 
     @Override
     void handle(Context ctx) throws Exception {
-
-
-
-        ctx.byMethod{
-            it.get{
+        ctx.byMethod {
+            it.get {
                 ctx.render handlebarsTemplate('registrationpage.html')
             }
-            it.post{
-                ctx.render "post is working" + ctx.allPathTokens.eventId
-
+            it.post {
+                ctx.render "post is working" + ctx.allPathTokens.email
             }
         }
 

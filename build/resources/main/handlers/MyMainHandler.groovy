@@ -22,6 +22,7 @@ class MyMainHandler  extends GroovyChainAction {
         // all new TestHomePageHandler()
         get "getMyHandler" , new FirstPageHandler()
         get "renderFromHandler" , new RenderFromHandler()
+        path "testhandlebar", new TestHomePageHandler()
 
         prefix("prefixtest"){
             get("first/:id?"){
@@ -55,7 +56,7 @@ class MyMainHandler  extends GroovyChainAction {
                 }
             }*/
             all  new RegistrationHandler()
-            path "registration", new RegistrationHandler()
+            path "registration/:email", new RegistrationHandler()
            // post "registration", new RenderFromHandler()
         }
 
