@@ -39,7 +39,7 @@ class MyMainHandler  extends GroovyChainAction {
 
 
         get{
-           render "http://local.knect365.com:5050/HomePage"
+           render "/HomePage"
         }
 
         get "HomePage" , new  HomePageHandler()
@@ -56,7 +56,7 @@ class MyMainHandler  extends GroovyChainAction {
                 }
             }*/
             all  new RegistrationHandler()
-            path "registration/:email", new RegistrationHandler()
+            path "registration", new RegistrationHandler()
            // post "registration", new RenderFromHandler()
         }
 

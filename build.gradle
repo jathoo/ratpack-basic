@@ -29,6 +29,9 @@ dependencies {
 
 
   compile ratpack.dependency('handlebars')
+  compile ratpack.dependency("guice"), {
+    force = true
+  }
 
 
 }

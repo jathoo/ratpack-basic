@@ -1,36 +1,39 @@
 package handlers
 
-import ratpack.exec.Promise
+import Services.TestHomeService
 import ratpack.form.Form
 import ratpack.handling.Context
-import ratpack.handling.Handler
+import ratpack.handling.InjectionHandler
 
 import static ratpack.handlebars.Template.handlebarsTemplate
 
+class TestHomePageHandler extends InjectionHandler {
 
-class TestHomePageHandler implements Handler{
 
+    void handle(Context ctx, TestHomeService testHomeService) throws Exception {
 
-    @Override
-    void handle(Context ctx) throws Exception {
-
-        ctx.byMethod{
-            it.get{
+        ctx.byMethod {
+            it.get {
                 ctx.render handlebarsTemplate('Home-test.html', name: "Yathu")
 
             }
-            it.post{
+            it.post {
 
                 String email = ""
-                ctx.parse(Form).then { Form receiptForm ->
-                    email = receiptForm.get("email")
-                    //ctx.render "posted value    " + email
-                    ctx.render handlebarsTemplate('Home-test.html', name: email)
+                String newEmail = ""
+                ctx.parse(Form).then { Form testForm ->
+                    email = testForm.get("email")
+                    newEmail =  testHomeService.alterEmail(email)
+
+
+
+
+                    println newEmail
+                    ctx.render handlebarsTemplate('Home-test.html', name:newEmail)
                 }
-
             }
 
-            }
         }
     }
+}
 
