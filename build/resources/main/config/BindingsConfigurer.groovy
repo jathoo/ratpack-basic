@@ -14,5 +14,6 @@ class BindingsConfigurer implements Action<BindingsSpec> {
                 .module(TextTemplateModule)
                 .module(HandlebarsModule)
                 .module(InjectionModule)
+                .module(HikariModule)
     }
 }

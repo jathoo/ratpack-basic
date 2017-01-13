@@ -47,6 +47,28 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-hikari/1.4.4/79b0f0053bd1c4d0ccac0786bd2ae8c45ddf5c06/ratpack-hikari-1.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-hikari/1.4.4/f3d274a0502140ba74a0003d289ca589621ee7a3/ratpack-hikari-1.4.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-guice/1.4.4/f331d228e70eb5c3075ad9fd84e95bcb95f52d43/ratpack-guice-1.4.4.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-guice/1.4.4/5cf5d210ed4369b8e8e689423252ad068f6124d7/ratpack-guice-1.4.4-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
           <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.netty/netty-codec-http/4.1.5.Final/87bda1b9ec7e3f75ca721fc87735cbedad2aa1a/netty-codec-http-4.1.5.Final.jar!/"/>
         </CLASSES>
         <JAVADOC/>
@@ -212,22 +234,44 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-guice/1.4.4/f331d228e70eb5c3075ad9fd84e95bcb95f52d43/ratpack-guice-1.4.4.jar!/"/>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.github.jknack/handlebars/2.3.0/db25e28862f198d3f40e840fe8a41e1acef078d3/handlebars-2.3.0.jar!/"/>
         </CLASSES>
         <JAVADOC/>
         <SOURCES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-guice/1.4.4/5cf5d210ed4369b8e8e689423252ad068f6124d7/ratpack-guice-1.4.4-sources.jar!/"/>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.github.jknack/handlebars/2.3.0/92dc09ed310917dda09f18efe369164bbfa237da/handlebars-2.3.0-sources.jar!/"/>
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.github.jknack/handlebars/2.3.0/db25e28862f198d3f40e840fe8a41e1acef078d3/handlebars-2.3.0.jar!/"/>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/2.3.5/d628ede98e7f816f81f180eac0724648b0ce7f28/HikariCP-2.3.5.jar!/"/>
         </CLASSES>
         <JAVADOC/>
         <SOURCES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.github.jknack/handlebars/2.3.0/92dc09ed310917dda09f18efe369164bbfa237da/handlebars-2.3.0-sources.jar!/"/>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.zaxxer/HikariCP/2.3.5/8f5cfaf63c43e3200411423f0f75bbb1b30cff4c/HikariCP-2.3.5-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.1.0/eeb69005da379a10071aa4948c48d89250febb07/guice-4.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.1.0/3f43f7c8743238f310246cfb13ba3e2e1aca6655/guice-4.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-multibindings/4.1.0/3b27257997ac51b0f8d19676f1ea170427e86d51/guice-multibindings-4.1.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-multibindings/4.1.0/240bb696c95598a23b519ffd8a88773551850498/guice-multibindings-4.1.0-sources.jar!/"/>
         </SOURCES>
       </library>
     </orderEntry>
@@ -300,28 +344,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.1.0/eeb69005da379a10071aa4948c48d89250febb07/guice-4.1.0.jar!/"/>
-        </CLASSES>
-        <JAVADOC/>
-        <SOURCES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.1.0/3f43f7c8743238f310246cfb13ba3e2e1aca6655/guice-4.1.0-sources.jar!/"/>
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-multibindings/4.1.0/3b27257997ac51b0f8d19676f1ea170427e86d51/guice-multibindings-4.1.0.jar!/"/>
-        </CLASSES>
-        <JAVADOC/>
-        <SOURCES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/com.google.inject.extensions/guice-multibindings/4.1.0/240bb696c95598a23b519ffd8a88773551850498/guice-multibindings-4.1.0-sources.jar!/"/>
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.1/905075e6c80f206bbe6cf1e809d2caa69f420c76/commons-lang3-3.1.jar!/"/>
         </CLASSES>
         <JAVADOC/>
@@ -355,17 +377,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.5.Final/5f367bedcdc185a727fda3296b9a18014cdc22c4/netty-resolver-4.1.5.Final.jar!/"/>
-        </CLASSES>
-        <JAVADOC/>
-        <SOURCES>
-          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.5.Final/5c43bfdba3b1feb5d573293ce14b413c9bd64147/netty-resolver-4.1.5.Final-sources.jar!/"/>
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar!/"/>
         </CLASSES>
         <JAVADOC/>
@@ -382,6 +393,17 @@
         <JAVADOC/>
         <SOURCES>
           <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.5.Final/5f367bedcdc185a727fda3296b9a18014cdc22c4/netty-resolver-4.1.5.Final.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/pair-5/.gradle/caches/modules-2/files-2.1/io.netty/netty-resolver/4.1.5.Final/5c43bfdba3b1feb5d573293ce14b413c9bd64147/netty-resolver-4.1.5.Final-sources.jar!/"/>
         </SOURCES>
       </library>
     </orderEntry>

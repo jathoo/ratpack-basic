@@ -9,9 +9,14 @@ import javax.inject.Inject
 class  TestHomeService {
 
     //Constructor Inject of dependencies
-    //Store interface
+/*    //Store interface
 
-    
+    UserAccountStore userAccountStore
+
+    @Inject
+    public TestHomeService(UserAccountStore blah) {
+
+    }*/
 
 
 

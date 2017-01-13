@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5514847-94f4-4de4-a59a-0d1e161f44e7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ratpack/Services/TestHomeService.groovy" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ratpack/config/InjectionModule.groovy" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/my-first-ratpack-app/handlebars/reverseProxyAdmin.html.hbs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/Services/TestHomeService.groovy" afterPath="$PROJECT_DIR$/build/resources/main/Services/TestHomeService.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/config/BindingsConfigurer.groovy" afterPath="$PROJECT_DIR$/build/resources/main/config/BindingsConfigurer.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/handlers/MyMainHandler.groovy" afterPath="$PROJECT_DIR$/build/resources/main/handlers/MyMainHandler.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/handlers/TestHomePageHandler.groovy" afterPath="$PROJECT_DIR$/build/resources/main/handlers/TestHomePageHandler.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-first-ratpack-app.iml" afterPath="$PROJECT_DIR$/my-first-ratpack-app.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-first-ratpack-app.iws" afterPath="$PROJECT_DIR$/my-first-ratpack-app.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/my-first-ratpack-app/templates/helloFromHandler.html" afterPath="$PROJECT_DIR$/out/production/my-first-ratpack-app/templates/helloFromHandler.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/my-first-ratpack-app/templates/home-page.html" afterPath="$PROJECT_DIR$/out/production/my-first-ratpack-app/templates/home-page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ratpack/Services/TestHomeService.groovy" afterPath="$PROJECT_DIR$/src/ratpack/Services/TestHomeService.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ratpack/config/BindingsConfigurer.groovy" afterPath="$PROJECT_DIR$/src/ratpack/config/BindingsConfigurer.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ratpack/handlers/MyMainHandler.groovy" afterPath="$PROJECT_DIR$/src/ratpack/handlers/MyMainHandler.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ratpack/handlers/TestHomePageHandler.groovy" afterPath="$PROJECT_DIR$/src/ratpack/handlers/TestHomePageHandler.groovy" />
     </list>
     <ignored path="my-first-ratpack-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,8 +79,8 @@
       <file leaf-file-name="BindingsConfigurer.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ratpack/config/BindingsConfigurer.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            <state relative-caret-position="234">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
               <folding>
                 <element signature="e#16#40#0" expanded="true" />
               </folding>
@@ -122,8 +123,8 @@
       <file leaf-file-name="TestHomeService.groovy" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ratpack/Services/TestHomeService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="324">
+              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
               <folding>
                 <element signature="e#18#52#0" expanded="true" />
               </folding>
@@ -169,7 +170,7 @@
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="558">
-              <caret line="31" column="35" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="35" />
+              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -235,11 +236,11 @@
         <option value="$PROJECT_DIR$/src/ratpack/handlers/RegistrationHandler.groovy" />
         <option value="$PROJECT_DIR$/src/ratpack/handlebars/Home-test.html.hbs" />
         <option value="$PROJECT_DIR$/src/ratpack/handlers/MyMainHandler.groovy" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/ratpack/InjectionModule.groovy" />
         <option value="$PROJECT_DIR$/src/ratpack/config/InjectionModule.groovy" />
-        <option value="$PROJECT_DIR$/src/ratpack/config/BindingsConfigurer.groovy" />
         <option value="$PROJECT_DIR$/src/ratpack/handlers/TestHomePageHandler.groovy" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/ratpack/config/BindingsConfigurer.groovy" />
         <option value="$PROJECT_DIR$/src/ratpack/Services/TestHomeService.groovy" />
       </list>
     </option>
@@ -1018,7 +1019,7 @@
       <workItem from="1483712134719" duration="2183000" />
       <workItem from="1483717308828" duration="4330000" />
       <workItem from="1484060777163" duration="30325000" />
-      <workItem from="1484317501576" duration="36000" />
+      <workItem from="1484317501576" duration="2866000" />
     </task>
     <servers />
   </component>
@@ -1028,7 +1029,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74347000" />
+    <option name="totallyTimeSpent" value="77177000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1041,7 +1042,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951945" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1051,7 +1052,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23390558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45698926" sideWeight="0.49585405" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45698926" sideWeight="0.49585405" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2570481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1352,40 +1353,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ratpack/handlers/MyMainHandler.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#18#66#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ratpack/config/BindingsConfigurer.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding>
-            <element signature="e#16#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ratpack/config/InjectionModule.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="e#16#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1406,6 +1379,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ratpack/config/InjectionModule.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding>
+            <element signature="e#16#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ratpack/handlers/TestHomePageHandler.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1416,10 +1407,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ratpack/config/BindingsConfigurer.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding>
+            <element signature="e#16#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ratpack/Services/TestHomeService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        <state relative-caret-position="324">
+          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
           <folding>
             <element signature="e#18#52#0" expanded="true" />
           </folding>

@@ -24,6 +24,10 @@ class TestHomePageHandler extends InjectionHandler {
                 ctx.parse(Form).then { Form testForm ->
                     email = testForm.get("email")
                     newEmail =  testHomeService.alterEmail(email)
+
+
+
+
                     println newEmail
                     ctx.render handlebarsTemplate('Home-test.html', name:newEmail)
                 }
