@@ -5,7 +5,7 @@ import ratpack.func.Action
 import ratpack.groovy.template.TextTemplateModule
 import ratpack.guice.BindingsSpec
 import ratpack.handlebars.HandlebarsModule
-import ratpack.hikari.HikariModule
+//import ratpack.hikari.HikariModule
 
 
 class BindingsConfigurer implements Action<BindingsSpec> {
@@ -16,6 +16,6 @@ class BindingsConfigurer implements Action<BindingsSpec> {
                 .module(TextTemplateModule)
                 .module(HandlebarsModule)
                 .module(InjectionModule)
-                .module(HikariModule)
+               // .module(HikariModule)
     }
 }
