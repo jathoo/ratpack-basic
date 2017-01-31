@@ -18,7 +18,7 @@ class HikariConfigModule extends AbstractModule {
     HikariConfig provideHikariConfig(DatabaseConfig config) {
         HikariConfig hc = new HikariConfig(jdbcUrl: config.jdbcUrl, username: config.dbUser, password: config.dbPassword,
                 maximumPoolSize: MAX_POOL_SIZE, connectionTestQuery: "SELECT * FROM TestTable")
-        return hc
+         return hc
     }
 
 }

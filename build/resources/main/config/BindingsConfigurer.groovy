@@ -20,10 +20,5 @@ class BindingsConfigurer implements Action<BindingsSpec> {
                 .module(InjectionModule)
                 .module(HikariModule)
                 .module(HikariConfigModule)
-                 /*.bindInstance new Service() {
-            void onStart(StartEvent e) throws Exception {
-                log.info("App starting")
-            }
-    }*/
     }
 }
