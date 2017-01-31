@@ -1,13 +1,15 @@
 package config
 
+import config.db.HikariConfigModule
+import groovy.util.logging.Slf4j
 import module.MainModule
 import ratpack.func.Action
 import ratpack.groovy.template.TextTemplateModule
 import ratpack.guice.BindingsSpec
 import ratpack.handlebars.HandlebarsModule
-//import ratpack.hikari.HikariModule
+import ratpack.hikari.HikariModule
 
-
+@Slf4j
 class BindingsConfigurer implements Action<BindingsSpec> {
 
     void execute(BindingsSpec spec) throws Exception {
@@ -16,6 +18,12 @@ class BindingsConfigurer implements Action<BindingsSpec> {
                 .module(TextTemplateModule)
                 .module(HandlebarsModule)
                 .module(InjectionModule)
-               // .module(HikariModule)
+                .module(HikariModule)
+                .module(HikariConfigModule)
+                 /*.bindInstance new Service() {
+            void onStart(StartEvent e) throws Exception {
+                log.info("App starting")
+            }
+    }*/
     }
 }

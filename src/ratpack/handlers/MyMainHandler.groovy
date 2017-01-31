@@ -45,19 +45,8 @@ class MyMainHandler  extends GroovyChainAction {
         get "HomePage" , new  HomePageHandler()
 
         prefix("user"){
-          /*  all {
-                byMethod {
-                    get {
-
-                    }
-                    post {
-
-                    }
-                }
-            }*/
             all  new RegistrationHandler()
             path "registration", new RegistrationHandler()
-           // post "registration", new RenderFromHandler()
         }
 
     }

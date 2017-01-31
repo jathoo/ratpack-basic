@@ -27,9 +27,10 @@ dependencies {
   // https://mvnrepository.com/artifact/com.google.inject/guice-parent
   compile group: 'com.google.inject', name: 'guice-parent', version: '3.0'
 
+  compile 'org.postgresql:postgresql:9.4.1208'
 
   compile ratpack.dependency('handlebars')
- // compile ratpack.dependency('hikari')
+  compile ratpack.dependency('hikari')
 
   compile ratpack.dependency("guice"), {
     force = true
