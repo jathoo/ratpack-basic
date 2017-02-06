@@ -1,6 +1,6 @@
-package handlers
+package test
 
-import Services.TestHomeService
+import test.service.TestHomeService
 import ratpack.form.Form
 import ratpack.handling.Context
 import ratpack.handling.InjectionHandler

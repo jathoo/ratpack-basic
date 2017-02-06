@@ -1,6 +1,6 @@
 package config
 
-import Services.TestHomeService
+import test.TestHomeService
 import com.google.inject.AbstractModule
 
 class InjectionModule extends AbstractModule {

@@ -1,4 +1,4 @@
-package Services
+package test.service
 
 import com.google.inject.Singleton
 

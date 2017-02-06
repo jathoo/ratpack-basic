@@ -1,6 +1,7 @@
 package handlers
 
 import ratpack.groovy.handling.GroovyChainAction
+import test.TestHomePageHandler
 
 import static ratpack.groovy.Groovy.groovyTemplate
 
