@@ -14,6 +14,7 @@
     <orderEntry type="library" name="Gradle: io.ratpack:ratpack-core:1.4.4" level="project" />
     <orderEntry type="library" name="Gradle: io.ratpack:ratpack-groovy:1.4.4" level="project" />
     <orderEntry type="library" name="Gradle: org.postgresql:postgresql:9.4.1208" level="project" />
+    <orderEntry type="library" name="Gradle: postgresql:postgresql:9.1-901-1.jdbc4" level="project" />
     <orderEntry type="library" name="Gradle: io.ratpack:ratpack-handlebars:1.4.4" level="project" />
     <orderEntry type="library" name="Gradle: io.ratpack:ratpack-hikari:1.4.4" level="project" />
     <orderEntry type="library" name="Gradle: io.ratpack:ratpack-guice:1.4.4" level="project" />

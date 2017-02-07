@@ -1,6 +1,7 @@
 package config
 
 import config.db.HikariConfigModule
+import config.db.PersistenceModule
 import groovy.util.logging.Slf4j
 import module.MainModule
 import ratpack.func.Action
@@ -20,5 +21,7 @@ class BindingsConfigurer implements Action<BindingsSpec> {
                 .module(InjectionModule)
                 .module(HikariModule)
                 .module(HikariConfigModule)
+                .module(PersistenceModule)
+
     }
 }

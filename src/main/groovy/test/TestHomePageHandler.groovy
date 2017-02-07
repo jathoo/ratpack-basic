@@ -14,7 +14,7 @@ class TestHomePageHandler extends InjectionHandler {
 
         ctx.byMethod {
             it.get {
-                ctx.render handlebarsTemplate('Home-test.html', name: "Yathu")
+                ctx.render handlebarsTemplate('test/Home-test.html', name: "Yathu")
 
             }
             it.post {
@@ -25,7 +25,7 @@ class TestHomePageHandler extends InjectionHandler {
                     email = testForm.get("email")
                     newEmail =  testHomeService.alterEmail(email)
                     println newEmail
-                    ctx.render handlebarsTemplate('Home-test.html', name:newEmail)
+                    ctx.render handlebarsTemplate('test/Home-test.html', name:newEmail)
                 }
             }
 

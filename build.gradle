@@ -28,6 +28,8 @@ dependencies {
   compile group: 'com.google.inject', name: 'guice-parent', version: '3.0'
 
   compile 'org.postgresql:postgresql:9.4.1208'
+  compile 'com.fasterxml.jackson:jackson-parent:2.7-1'
+  compile 'postgresql:postgresql:9.1-901-1.jdbc4'
 
   compile ratpack.dependency('handlebars')
   compile ratpack.dependency('hikari')
