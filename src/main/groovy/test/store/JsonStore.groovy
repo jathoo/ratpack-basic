@@ -17,16 +17,15 @@ class JsonStore {
     public <T> Promise<T> withDataSource(Closure<T> c) {
         assert dataSource, "DataSource appears to be null"
         Sql sql = new Sql(dataSource.getConnection())
-        //Blocking.get {
+        Blocking.get {
             try {
                 c.call(sql)
             } catch (Exception e) {
                 log.error(e.message)
                 throw e
-
             } finally {
                 sql.close()
             }
-        //}
+        }
     }
 }

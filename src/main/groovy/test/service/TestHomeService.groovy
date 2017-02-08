@@ -4,6 +4,8 @@ import Business.Business
 import User.User
 import com.google.inject.Singleton
 import groovy.util.logging.Slf4j
+import ratpack.exec.Operation
+import ratpack.exec.Promise
 import test.store.ITestStore
 
 import javax.inject.Inject
@@ -35,9 +37,13 @@ class  TestHomeService {
     String alterEmail(String email){
 
       //  println( email + "changed")
+        email + "changed"
+    }
+
+    Promise<String> callSave(String email){
 
         user.userId = "user1"
-        user.userName = email
+        user.userName = email + "changed layer"
 
         println("user id    " + user.userName)
 
@@ -45,10 +51,7 @@ class  TestHomeService {
         business.businessUser = user
         println("business user id    " + business.businessUser.userName)
 
-        log.info(iTestStore.save(business).operation().toString())
-        email + "changed"
-
-
+        iTestStore.save(business)
     }
 
     //hikari module set up

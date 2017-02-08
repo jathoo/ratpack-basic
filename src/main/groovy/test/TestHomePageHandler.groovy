@@ -4,6 +4,7 @@ import test.service.TestHomeService
 import ratpack.form.Form
 import ratpack.handling.Context
 import ratpack.handling.InjectionHandler
+import test.store.TestStoreImpl
 
 import static ratpack.handlebars.Template.handlebarsTemplate
 
@@ -18,17 +19,23 @@ class TestHomePageHandler extends InjectionHandler {
 
             }
             it.post {
-
-                String email = ""
-                String newEmail = ""
                 ctx.parse(Form).then { Form testForm ->
-                    email = testForm.get("email")
-                    newEmail =  testHomeService.alterEmail(email)
-                    println newEmail
-                    ctx.render handlebarsTemplate('test/Home-test.html', name:newEmail)
+                    String email = testForm.get("email")
+
+                    /*
+                          String email = ""
+                          String newEmail = ""
+                          newEmail =  testHomeService.alterEmail(email)
+                          println newEmail
+                          ctx.render handlebarsTemplate('test/Home-test.html', name:newEmail)*/
+
+                    testHomeService.callSave(email).onError {
+                        ctx.render handlebarsTemplate('test/Home-test.html', name: "something went wrong")
+                    }.then {
+                        ctx.render handlebarsTemplate('test/Home-test.html', name: "its on db")
+                    }
                 }
             }
-
         }
     }
 }
