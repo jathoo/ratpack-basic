@@ -1,10 +1,9 @@
 package test
 
-import test.service.TestHomeService
 import ratpack.form.Form
 import ratpack.handling.Context
 import ratpack.handling.InjectionHandler
-import test.store.TestStoreImpl
+import test.service.TestHomeService
 
 import static ratpack.handlebars.Template.handlebarsTemplate
 

@@ -1,0 +1,24 @@
+<changelist name="Yatu_s_files2" date="1486745671139" recycled="false">
+  <option name="PATH" value="$PROJECT_DIR$/.shelf/Yatu_s_files2/shelved.patch" />
+  <option name="DESCRIPTION" value="Yatu's files" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/2.9/taskArtifacts/fileSnapshots.bin" />
+    <option name="AFTER_PATH" value=".gradle/2.9/taskArtifacts/fileSnapshots.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.shelf/Yatu_s_files2/fileSnapshots.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/2.9/taskArtifacts/taskArtifacts.bin" />
+    <option name="AFTER_PATH" value=".gradle/2.9/taskArtifacts/taskArtifacts.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.shelf/Yatu_s_files2/taskArtifacts.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/2.9/taskArtifacts/fileHashes.bin" />
+    <option name="AFTER_PATH" value=".gradle/2.9/taskArtifacts/fileHashes.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.shelf/Yatu_s_files2/fileHashes.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/2.9/taskArtifacts/cache.properties.lock" />
+    <option name="AFTER_PATH" value=".gradle/2.9/taskArtifacts/cache.properties.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.shelf/Yatu_s_files2/cache.properties.lock" />
+  </binary>
+</changelist>

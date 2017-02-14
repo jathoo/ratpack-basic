@@ -2,6 +2,7 @@ package handlers
 
 import ratpack.groovy.handling.GroovyChainAction
 import test.TestHomePageHandler
+import test.TestJsonHandler
 
 import static ratpack.groovy.Groovy.groovyTemplate
 
@@ -24,6 +25,7 @@ class MyMainHandler  extends GroovyChainAction {
         get "getMyHandler" , new FirstPageHandler()
         get "renderFromHandler" , new RenderFromHandler()
         path "testhandlebar", new TestHomePageHandler()
+        path "testjsonhandlebar", new TestJsonHandler()
 
         prefix("prefixtest"){
             get("first/:id?"){

@@ -1,0 +1,476 @@
+Index: src/main/groovy/test/service/TestHomeService.groovy
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/groovy/test/service/TestHomeService.groovy	(revision a12ddd1bfc018b02a74f8a4e649f6c6e6bb576cc)
++++ src/main/groovy/test/service/TestHomeService.groovy	(revision )
+@@ -54,6 +54,13 @@
+         iTestStore.save(business)
+     }
+ 
++    Promise<Business> getBusiness(){
++        iTestStore.fetch("26").then{
++            it
++        }
++
++    }
++
+     //hikari module set up
+     //set up db access in project
+ 
+Index: src/main/groovy/test/TestHomePageHandler.groovy
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/groovy/test/TestHomePageHandler.groovy	(revision a12ddd1bfc018b02a74f8a4e649f6c6e6bb576cc)
++++ src/main/groovy/test/TestHomePageHandler.groovy	(revision )
+@@ -1,14 +1,13 @@
+ package test
+ 
+-import test.service.TestHomeService
+ import ratpack.form.Form
+ import ratpack.handling.Context
+ import ratpack.handling.InjectionHandler
+-import test.store.TestStoreImpl
++import test.service.TestHomeService
+ 
+ import static ratpack.handlebars.Template.handlebarsTemplate
+ 
+-class TestHomePageHandler extends InjectionHandler {
++class TestHomeUnexpected character ('d' (code 100))PageHandler extends InjectionHandler {
+ 
+ 
+     void handle(Context ctx, TestHomeService testHomeService) throws Exception {
+@@ -32,7 +31,10 @@
+                     testHomeService.callSave(email).onError {
+                         ctx.render handlebarsTemplate('test/Home-test.html', name: "something went wrong")
+                     }.then {
+-                        ctx.render handlebarsTemplate('test/Home-test.html', name: "its on db")
++                        //ctx.render handlebarsTemplate('test/Home-test.html', name: "its on db")
++                        testHomeService.getBusiness().then{
++                            ctx.render handlebarsTemplate('test/Home-test.html', name: it.businessUser )
++                        }
+                     }
+                 }
+             }
+Index: my-first-ratpack-app.iws
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- my-first-ratpack-app.iws	(revision a12ddd1bfc018b02a74f8a4e649f6c6e6bb576cc)
++++ my-first-ratpack-app.iws	(revision )
+@@ -2,20 +2,10 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="b5514847-94f4-4de4-a59a-0d1e161f44e7" name="Default" comment="">
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/test/store/JsonStore$_withDataSource_closure1.class" afterPath="" />
+-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/test/store/TestStoreImpl$_save_closure2.class" afterPath="" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/cache.properties.lock" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileHashes.bin" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/fileSnapshots.bin" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.9/taskArtifacts/taskArtifacts.bin" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/test/service/TestHomeService.class" afterPath="$PROJECT_DIR$/build/classes/main/test/service/TestHomeService.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/test/store/JsonStore.class" afterPath="$PROJECT_DIR$/build/classes/main/test/store/JsonStore.class" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/test/store/TestStoreImpl$_save_closure1.class" afterPath="$PROJECT_DIR$/build/classes/main/test/store/TestStoreImpl$_save_closure1.class" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my-first-ratpack-app.iws" afterPath="$PROJECT_DIR$/my-first-ratpack-app.iws" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/groovy/test/TestHomePageHandler.groovy" afterPath="$PROJECT_DIR$/src/main/groovy/test/TestHomePageHandler.groovy" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/groovy/test/service/TestHomeService.groovy" afterPath="$PROJECT_DIR$/src/main/groovy/test/service/TestHomeService.groovy" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/groovy/test/store/ITestStore.groovy" afterPath="$PROJECT_DIR$/src/main/groovy/test/store/ITestStore.groovy" />
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/groovy/test/store/JsonStore.groovy" afterPath="$PROJECT_DIR$/src/main/groovy/test/store/JsonStore.groovy" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/groovy/test/store/TestStoreImpl.groovy" afterPath="$PROJECT_DIR$/src/main/groovy/test/store/TestStoreImpl.groovy" />
+     </list>
+     <ignored path="my-first-ratpack-app.iws" />
+@@ -89,107 +79,7 @@
+     <favorites_list name="my-first-ratpack-app" />
+   </component>
+   <component name="FileEditorManager">
+-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+-      <file leaf-file-name="TestHomeService.groovy" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/groovy/test/service/TestHomeService.groovy">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="158">
+-              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+-              <folding>
+-                <element signature="e#22#46#0" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="TestHomePageHandler.groovy" pinned="false" current-in-tab="true">
+-        <entry file="file://$PROJECT_DIR$/src/main/groovy/test/TestHomePageHandler.groovy">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="375">
+-              <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
+-              <folding>
+-                <element signature="e#14#49#0" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="JsonStore.groovy" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/groovy/test/store/JsonStore.groovy">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="357">
+-              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+-              <folding>
+-                <element signature="e#20#70#0" expanded="true" />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="JsonObjectMapper.groovy" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/groovy/test/JsonObjectMapper.groovy">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="194">
+-              <caret line="19" column="59" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="59" />
+-              <folding />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="ITestStore.groovy" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/groovy/test/store/ITestStore.groovy">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="108">
+-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+-              <folding />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="Operation.java" pinned="false" current-in-tab="false">
+-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-core/1.4.4/9f7852c690bb1e385f9b168905055c52c7967d9b/ratpack-core-1.4.4-sources.jar!/ratpack/exec/Operation.java">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="158">
+-              <caret line="68" column="17" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+-              <folding />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="TestStoreImpl.groovy" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/groovy/test/store/TestStoreImpl.groovy">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="360">
+-              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+-              <folding>
+-                <element signature="e#20#44#0" expanded="true" />
+-                <marker date="1486573729827" expanded="true" signature="408:464" ph="INSERT INTO TestTable... " />
+-              </folding>
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="Business.groovy" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/groovy/Business/Business.groovy">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="126">
+-              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+-              <folding />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-      <file leaf-file-name="User.groovy" pinned="false" current-in-tab="false">
+-        <entry file="file://$PROJECT_DIR$/src/main/groovy/User/User.groovy">
+-          <provider selected="true" editor-type-id="text-editor">
+-            <state relative-caret-position="54">
+-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+-              <folding />
+-            </state>
+-          </provider>
+-        </entry>
+-      </file>
+-    </leaf>
++    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+   </component>
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+@@ -718,10 +608,10 @@
+         <option value="$PROJECT_DIR$/src/ratpack/config/BindingsConfigurer.groovy" />
+         <option value="$PROJECT_DIR$/src/ratpack/config/db/HikariConfigModule.groovy" />
+         <option value="$PROJECT_DIR$/src/main/groovy/test/JsonObjectMapper.groovy" />
+-        <option value="$PROJECT_DIR$/src/main/groovy/test/store/ITestStore.groovy" />
+-        <option value="$PROJECT_DIR$/src/main/groovy/test/service/TestHomeService.groovy" />
+         <option value="$PROJECT_DIR$/src/main/groovy/test/store/JsonStore.groovy" />
++        <option value="$PROJECT_DIR$/src/main/groovy/test/store/ITestStore.groovy" />
+         <option value="$PROJECT_DIR$/src/main/groovy/test/store/TestStoreImpl.groovy" />
++        <option value="$PROJECT_DIR$/src/main/groovy/test/service/TestHomeService.groovy" />
+         <option value="$PROJECT_DIR$/src/main/groovy/test/TestHomePageHandler.groovy" />
+       </list>
+     </option>
+@@ -799,6 +689,7 @@
+       <foldersAlwaysOnTop value="true" />
+     </navigator>
+     <panes>
++      <pane id="Scope" />
+       <pane id="ProjectPane">
+         <subPane>
+           <PATH>
+@@ -953,7 +844,6 @@
+       </pane>
+       <pane id="PackagesPane" />
+       <pane id="Scratches" />
+-      <pane id="Scope" />
+     </panes>
+   </component>
+   <component name="PropertiesComponent">
+@@ -1526,7 +1416,8 @@
+       <workItem from="1486118866371" duration="13000" />
+       <workItem from="1486395097846" duration="12787000" />
+       <workItem from="1486467818334" duration="4314000" />
+-      <workItem from="1486562915136" duration="4192000" />
++      <workItem from="1486562915136" duration="5077000" />
++      <workItem from="1486574753175" duration="1570000" />
+     </task>
+     <servers />
+   </component>
+@@ -1536,7 +1427,7 @@
+     </history-entry>
+   </component>
+   <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="115694000" />
++    <option name="totallyTimeSpent" value="118149000" />
+   </component>
+   <component name="TodoView">
+     <todo-panel id="selected-file">
+@@ -1549,7 +1440,7 @@
+   </component>
+   <component name="ToolWindowManager">
+     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
+-    <editor active="true" />
++    <editor active="false" />
+     <layout>
+       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32951945" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+@@ -1558,8 +1449,8 @@
+       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.53655916" sideWeight="0.5063571" order="7" side_tool="true" content_ui="tabs" />
+       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23390558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35053763" sideWeight="0.49143174" order="7" side_tool="false" content_ui="tabs" />
+-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4344086" sideWeight="0.4936429" order="7" side_tool="false" content_ui="tabs" />
++      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35053763" sideWeight="0.49143174" order="7" side_tool="false" content_ui="tabs" />
++      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4344086" sideWeight="0.4936429" order="7" side_tool="false" content_ui="tabs" />
+       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17191818" sideWeight="0.49569893" order="0" side_tool="false" content_ui="combo" />
+@@ -1786,14 +1677,6 @@
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/README.md">
+-      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+-        <state split_layout="SPLIT">
+-          <first_editor relative-caret-position="0">
+-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+-          </first_editor>
+-          <second_editor />
+-        </state>
+-      </provider>
+       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+         <state split_layout="FIRST">
+           <first_editor relative-caret-position="683">
+@@ -1802,6 +1685,14 @@
+           <second_editor />
+         </state>
+       </provider>
++      <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
++        <state split_layout="SPLIT">
++          <first_editor relative-caret-position="0">
++            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
++          </first_editor>
++          <second_editor />
++        </state>
++      </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/src/main/groovy/Session/Session.groovy" />
+     <entry file="file://$PROJECT_DIR$/src/ratpack/Ratpack.groovy">
+@@ -1840,7 +1731,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="158">
+           <caret line="2468" column="19" selection-start-line="2468" selection-start-column="19" selection-end-line="2468" selection-end-column="19" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1848,7 +1738,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="288">
+           <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1856,7 +1745,6 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="144">
+           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+-          <folding />
+         </state>
+       </provider>
+     </entry>
+@@ -1882,14 +1770,6 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/groovy/User/User.groovy">
+-      <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="54">
+-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+-          <folding />
+-        </state>
+-      </provider>
+-    </entry>
+     <entry file="file://$PROJECT_DIR$/src/main/groovy/Business/Business.groovy">
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="126">
+@@ -1902,16 +1782,12 @@
+       <provider selected="true" editor-type-id="text-editor">
+         <state relative-caret-position="212">
+           <caret line="437" column="13" selection-start-line="437" selection-start-column="13" selection-end-line="437" selection-end-column="13" />
+-          <folding>
+-            <element signature="e#15513#15514#0" expanded="false" />
+-            <element signature="e#15565#15566#0" expanded="false" />
+-          </folding>
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/src/main/groovy/test/JsonObjectMapper.groovy">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="194">
++        <state relative-caret-position="216">
+           <caret line="19" column="59" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="59" />
+           <folding />
+         </state>
+@@ -1925,51 +1801,63 @@
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/groovy/test/store/JsonStore.groovy">
++    <entry file="file://$PROJECT_DIR$/src/main/groovy/test/store/ITestStore.groovy">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="357">
+-          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
++        <state relative-caret-position="144">
++          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+           <folding>
+-            <element signature="e#20#70#0" expanded="true" />
++            <element signature="e#20#44#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
++    <entry file="file://$PROJECT_DIR$/src/main/groovy/User/User.groovy">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="54">
++          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
+     <entry file="file://$PROJECT_DIR$/src/main/groovy/test/store/TestStoreImpl.groovy">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="360">
+-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
++        <state relative-caret-position="375">
++          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+           <folding>
+             <element signature="e#20#44#0" expanded="true" />
+-            <marker date="1486573729827" expanded="true" signature="408:464" ph="INSERT INTO TestTable... " />
++            <marker date="1486575666824" expanded="true" signature="408:464" ph="INSERT INTO TestTable... " />
++            <marker date="1486575666824" expanded="true" signature="732:770" ph="SELECT data test_table" />
++            <marker date="1486575666824" expanded="true" signature="732:774" ph="SELECT data test_table" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/groovy/test/store/ITestStore.groovy">
++    <entry file="file://$PROJECT_DIR$/src/main/groovy/test/service/TestHomeService.groovy">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="108">
+-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+-          <folding />
++        <state relative-caret-position="266">
++          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
++          <folding>
++            <element signature="e#22#46#0" expanded="true" />
++          </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/groovy/test/service/TestHomeService.groovy">
++    <entry file="file://$PROJECT_DIR$/src/main/groovy/test/TestHomePageHandler.groovy">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="158">
+-          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
++        <state relative-caret-position="18">
++          <caret line="9" column="51" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
+           <folding>
+-            <element signature="e#22#46#0" expanded="true" />
++            <element signature="e#14#38#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+     </entry>
+-    <entry file="file://$PROJECT_DIR$/src/main/groovy/test/TestHomePageHandler.groovy">
++    <entry file="file://$PROJECT_DIR$/src/main/groovy/test/store/JsonStore.groovy">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="375">
+-          <caret line="35" column="21" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
++        <state relative-caret-position="357">
++          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+           <folding>
+-            <element signature="e#14#49#0" expanded="true" />
++            <element signature="e#20#70#0" expanded="true" />
+           </folding>
+         </state>
+       </provider>
+\ No newline at end of file
+Index: src/main/groovy/test/store/TestStoreImpl.groovy
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/groovy/test/store/TestStoreImpl.groovy	(revision a12ddd1bfc018b02a74f8a4e649f6c6e6bb576cc)
++++ src/main/groovy/test/store/TestStoreImpl.groovy	(revision )
+@@ -22,4 +22,15 @@
+                     "updated"
+             }
+     }
++
++    @Override
++    Promise<Business> fetch(String id) {
++        int idint = id.toInteger()
++        withDataSource { Sql sql ->
++            sql.rows("""SELECT data from test_table where id = :id """, id:idint)
++        }.map{ row ->
++            String json = row?.getAt(0)
++            json ? jsonObjectMapper.mapJsonToObject(json) : null
++        }
++    }
+ }
+Index: src/main/groovy/test/store/ITestStore.groovy
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/groovy/test/store/ITestStore.groovy	(revision a12ddd1bfc018b02a74f8a4e649f6c6e6bb576cc)
++++ src/main/groovy/test/store/ITestStore.groovy	(revision )
+@@ -1,10 +1,11 @@
+ package test.store
+ 
++import Business.Business
+ import ratpack.exec.Promise
+ 
+ interface ITestStore<T> {
+     //Promise<List<?>> fetchAll()
+     Promise<String> save(T t)
+-    //Promise<?> fetch(String id)
++    Promise<Business> fetch(String id)
+     //Operation delete(String id)
+ }
