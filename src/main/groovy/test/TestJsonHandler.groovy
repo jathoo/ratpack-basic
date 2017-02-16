@@ -1,20 +1,24 @@
 package test
 
+import User.User
+import groovy.util.logging.Slf4j
 import ratpack.handling.Context
 import ratpack.handling.InjectionHandler
+import ratpack.jackson.Jackson
 import test.service.TestHomeService
 
-import static ratpack.handlebars.Template.handlebarsTemplate
-
-class TestJsonHandler  extends InjectionHandler{
+@Slf4j
+class TestJsonHandler extends InjectionHandler {
     void handle(Context ctx, TestHomeService testHomeService) throws Exception {
-        ctx.byContent{
-            it.json{
-                ctx.render handlebarsTemplate('test/Home-test.html', name: testHomeService.alterEmail("getting json response"))
-            }.xml{
-                ctx.render handlebarsTemplate('test/Home-test.html', name: testHomeService.alterEmail("getting xml response"))
-            }
-        }
 
+        ctx.byContent {
+            it.json {
+                ctx.parse(Jackson.fromJson(User)).then { data ->
+                    def alterUserName = testHomeService.alterEmail(data.userName)
+                    log.info("[userid is : $data.userId] [user name is : $alterUserName])] ")
+                }
+            }
+
+        }
     }
 }

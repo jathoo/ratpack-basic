@@ -31,6 +31,15 @@ dependencies {
   compile 'com.fasterxml.jackson:jackson-parent:2.7-1'
   compile 'postgresql:postgresql:9.1-901-1.jdbc4'
 
+  compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-guice', version: '2.8.6', {
+    exclude module: "guice"
+  }
+
+  compile group: 'com.fasterxml.jackson.module', name: 'jackson-module-guice', version: '2.8.6'
+
+  compile group: 'io.ratpack', name: 'ratpack-jackson', version: '0.9.12'
+
+
   compile ratpack.dependency('handlebars')
   compile ratpack.dependency('hikari')
 

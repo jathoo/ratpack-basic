@@ -9,6 +9,8 @@ import ratpack.groovy.template.TextTemplateModule
 import ratpack.guice.BindingsSpec
 import ratpack.handlebars.HandlebarsModule
 import ratpack.hikari.HikariModule
+import ratpack.jackson.JacksonModule
+
 
 @Slf4j
 class BindingsConfigurer implements Action<BindingsSpec> {
